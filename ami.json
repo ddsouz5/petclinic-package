@@ -1,7 +1,7 @@
 { 
   "variables" : {
-      "region" : "us-west-1",
-      "source_ami" : "ami-099592454c308b00f",
+      "region" : "us-east-1",
+      "source_ami" : "ami-0c6b256450cd3fce0",
       "buildId" : "",
       "jenkinsBuildId" : "",
       "artifactId" : ""
@@ -9,6 +9,8 @@
   "builders" : [
       {
         "type" : "amazon-ebs",
+        "access_key": "{{user `aws_access_key`}}",
+        "secret_key": "{{user `aws_secret_key`}}",
         "profile" : "default",
         "region" : "{{user `region`}}",
         "instance_type" : "t2.micro",
